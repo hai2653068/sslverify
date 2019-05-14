@@ -6,6 +6,7 @@ import org.bouncycastle.openssl.PEMReader;
 import java.io.*;
 import java.security.*;
 import java.security.cert.*;
+import java.text.SimpleDateFormat;
 
 /**
  * @ClassName SslVerifyUtil
@@ -45,6 +46,17 @@ public class SslVerifyUtil {
             if(publicKey1.equals(publicKey)){
                 System.out.println("true");
             }
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            System.out.println("域名信息："+cert.getSubjectDN());
+            System.out.println("证书申请时间："+sdf.format(cert.getNotBefore()));
+            System.out.println("证书到期时间："+sdf.format(cert.getNotAfter()));
+
+
+            System.out.println("IssuerDN："+cert.getIssuerDN().getName());
+            System.out.println("证书信息："+cert);
+
         }
 
     }
