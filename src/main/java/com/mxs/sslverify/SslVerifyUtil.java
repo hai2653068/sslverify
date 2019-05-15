@@ -45,6 +45,16 @@ public class SslVerifyUtil {
 
             if(publicKey1.equals(publicKey)){
                 System.out.println("true");
+            }else{
+
+                System.out.println("false");
+
+                System.out.println("KeyPair public key:");
+                System.out.println(publicKey);
+
+                System.out.println("pem public key:");
+                System.out.println(publicKey1);
+
             }
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
